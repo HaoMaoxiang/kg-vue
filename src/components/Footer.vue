@@ -10,7 +10,7 @@ export default {
   name: 'my-footer',
   data () {
     return {
-      qrcodeUrl: '/static/img/qrcode.jpg'
+      qrcodeUrl: './static/img/qrcode.jpg'
     }
   }
 }
@@ -19,11 +19,11 @@ export default {
 <style>
   #qrcode-img {
     float: right;
-    margin: -150px 10px 10px 10px;
-    width: 140px;
+    margin: -110px 10px 10px 10px;
+    width: 100px;
   }
   .copyright {
     font-size: 12px;
-    line-height: 160px;
+    line-height: 120px;
   }
 </style>

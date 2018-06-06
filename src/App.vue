@@ -27,6 +27,23 @@ export default {
     margin: 0px;
     padding: 0xp;
   }
+  .hidden {
+    display:none;
+  }
+  .tip {
+    padding: 8px 16px;
+    background-color: #eceeff;
+    border-radius: 4px;
+    border: 1px solid #506aff;
+    border-left: 5px solid #506aff;
+    margin: 20px 0;
+  }
+  .el-table {
+    text-align: center;
+  }
+  .el-card {
+    margin: 10px 0px;
+  }
   .el-container {
     min-height: 100vh;
   }
@@ -38,8 +55,8 @@ export default {
     color: #333;
   }
   .el-footer {
-    background-color:#333;
+    background-color:rgb(30, 78, 121);
     color: #E9EEF3;
-    height: 160px !important;
+    height: 120px !important;
   }
 </style>

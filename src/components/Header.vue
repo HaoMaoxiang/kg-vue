@@ -11,7 +11,7 @@
     <!-- navMenu -->
     <el-col :span="18">
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal"
-      background-color="grey" text-color="aliceblue" active-text-color="#FFD700">
+      background-color="#333" text-color="aliceblue" active-text-color="#FFD700">
 
         <el-menu-item index="1" class="hidden-sm-and-down">
           <router-link to="/"><p>首页</p></router-link>
@@ -80,7 +80,7 @@ export default {
     width: 100%;
   }
   .logo-box {
-    background-color: grey;
+    background-color: #333;
     height: 60px;
     display: flex;
     flex-direction: column;

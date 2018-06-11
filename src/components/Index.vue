@@ -7,7 +7,7 @@
       </el-carousel-item>
     </el-carousel>
 
-    <el-card class="box-card">
+    <el-card>
       <div slot="header" class="clearfix">
         <span>基本信息</span>
       </div>

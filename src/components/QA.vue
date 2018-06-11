@@ -14,13 +14,13 @@
 
     <ul class="example-qa">
       <li>e.g. <a @click="sendQA('姚明有多高？')">姚明有多高？</a></li>
-      <li>e.g. <a @click="sendQA('姚明的女儿？')">姚明的女儿？</a></li>
+      <li>e.g. <a @click="sendQA('姚明的女儿？')">姚明的女儿是谁？</a></li>
       <li>e.g. <a @click="sendQA('周杰伦的代表作品有哪些？')">周杰伦的代表作品有哪些？</a></li>
     </ul>
     <div class="tip" v-bind:class="{hidden: isHidden}">
       <p>问题：{{ question }}</p>
       <br>
-      <p>回答：{{ answer }}</p>
+      <p>回答：<span v-html="answer"/></p>
     </div>
     <hr style="color:#333">
   </div>
@@ -73,6 +73,10 @@ export default {
   .example-qa li a {
     color: blue !important;
     cursor: pointer;
+  }
+
+  .qa a {
+    color: #333;
   }
 
 </style>

@@ -5,6 +5,7 @@ import Search from '@/components/Search'
 import API from '@/components/API'
 import QA from '@/components/QA'
 import About from '@/components/About'
+import Display from '@/components/Display'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About
+    },
+    {
+      path: '/display',
+      name: 'Display',
+      component: Display
     }
   ]
 })

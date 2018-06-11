@@ -20,7 +20,7 @@
         <el-submenu index="2" class="hidden-sm-and-down">
           <template slot="title">知识图谱</template>
           <el-menu-item index="2-1">
-            <router-link to="/search"><p>展示平台</p></router-link>
+            <router-link to="/search" @click.native="clearSessionStorage()"><p>展示平台</p></router-link>
           </el-menu-item>
           <el-menu-item index="2-2">
             <router-link to="/api"><p>API</p></router-link>
@@ -41,7 +41,7 @@
             <router-link to="/"><p>首页</p></router-link>
           </el-menu-item>
           <el-menu-item index="2-1">
-            <router-link to="/search"><p>展示平台</p></router-link>
+            <router-link to="/search" @click.native="clearSessionStorage"><p>展示平台</p></router-link>
           </el-menu-item>
           <el-menu-item index="2-2">
             <router-link to="/api"><p>API</p></router-link>
@@ -66,6 +66,11 @@ export default {
       logo01: './static/img/logo01.png',
       logo02: './static/img/logo02.png'
     }
+  },
+  methods: {
+    clearSessionStorage () {
+      // sessionStorage.setItem('entityList', "{'bdbaike': {}, 'hdbaike': {}, 'zhwiki': {}}")
+    }
   }
 }
 </script>
@@ -73,7 +78,7 @@ export default {
 <style>
   a {
     text-decoration: none;
-    color: aliceblue !important;
+    color: aliceblue;
   }
 
   .router-link p {

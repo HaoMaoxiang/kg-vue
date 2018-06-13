@@ -1,9 +1,18 @@
 <template>
   <div class="index">
 
-    <el-carousel :interval="4000" type="card" height="200px">
-      <el-carousel-item v-for="item in 3" :key="item">
+    <el-carousel :interval="4000" type="card">
+      <!-- <el-carousel-item v-for="item in 3" :key="item">
         <h3>{{ item }}</h3>
+      </el-carousel-item> -->
+      <el-carousel-item>
+        <img v-bind:src="profile" class="carousel-item-img"/>
+      </el-carousel-item>
+      <el-carousel-item>
+        <img v-bind:src="kg" class="carousel-item-img"/>
+      </el-carousel-item>
+      <el-carousel-item>
+        <img v-bind:src="qa" class="carousel-item-img"/>
       </el-carousel-item>
     </el-carousel>
 
@@ -39,7 +48,7 @@
           header-align="center">
         </el-table-column>
         <el-table-column
-          prop="address"
+          prop="person"
           label="贡献者"
           header-align="center">
         </el-table-column>
@@ -52,23 +61,33 @@
 export default {
   data () {
     return {
-      tableData: [{
-        date: '2016-05-02',
-        name: '添加模块',
-        address: '郝茂祥'
-      }, {
-        date: '2016-05-02',
-        name: '添加模块',
-        address: '郝茂祥'
-      }, {
-        date: '2016-05-02',
-        name: '添加模块',
-        address: '郝茂祥'
-      }, {
-        date: '2016-05-02',
-        name: '添加模块',
-        address: '郝茂祥'
-      }]
+      profile: './static/img/profile.png',
+      kg: './static/img/kg.png',
+      qa: './static/img/qa.png',
+      tableData: [
+        {
+          date: '2016-05-22',
+          name: '网站前端使用Vue重构',
+          person: '郝茂祥'
+        },
+        {
+          date: '2016-04-25',
+          name: '添加实体对齐结果',
+          person: '吕中剑'
+        }, {
+          date: '2016-04-20',
+          name: '添加互动百科知识库',
+          person: '吕中剑、郝茂祥'
+        }, {
+          date: '2016-04-03',
+          name: '添加维基百科知识库',
+          person: '吕中剑、郝茂祥'
+        }, {
+          date: '2016-03-05',
+          name: '网站构建',
+          person: '吕中剑、郝茂祥'
+        }
+      ]
     }
   },
   mounted () {
@@ -143,11 +162,11 @@ export default {
     flex-direction:column;
     padding: 20px 10%;
   }
-  .el-carousel__item:nth-child(2n) {
-     background-color: #99a9bf;
+  .el-carousel__container {
+    height: 400px;
   }
-  .el-carousel__item:nth-child(2n+1) {
-     background-color: #d3dce6;
+  .carousel-item-img {
+    height: 400px;
   }
   .bg-purple-dark {
     background: #99a9bf;

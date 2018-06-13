@@ -47,7 +47,7 @@ var edgeStyle = {
   type: 'dotted'
 }
 
-var WEB_ROOT_PATH = getRootPathWeb()
+// var WEB_ROOT_PATH = getRootPathWeb()
 
 // 去除所有a标签
 function replaceATag (str) {
@@ -65,7 +65,7 @@ var nodeIndexToNodeIndex = {}
 var nodeIndexToEdgeIndex = {}
 var predicateShow = []
 var myChart = null
-var originOption = null
+// var originOption = null
 
 // 深度拷贝
 var cloneObj = function (obj) {
@@ -257,33 +257,6 @@ function kgOption1 (entity, data) {
         }
       }
     },
-    toolbox: {
-      show: true,
-      itemSize: 25,
-      right: '5%',
-      feature: {
-        myTool1: {
-          show: true,
-          title: '显示',
-          icon: 'image://' + WEB_ROOT_PATH + '/img/lookup2.png',
-          onclick: function () {
-            hideShowAllNode(true)
-          }
-        },
-        myTool2: {
-          show: true,
-          title: '还原',
-          icon: 'image://' + WEB_ROOT_PATH + '/img/restore.png',
-          onclick: function () {
-            hideShowAllNode(false)
-          }
-        },
-        saveAsImage: {
-          show: true,
-          icon: 'image://' + WEB_ROOT_PATH + '/img/download.png'
-        }
-      }
-    },
     animation:
         false,
     animationDuration:
@@ -295,7 +268,6 @@ function kgOption1 (entity, data) {
           name: entity,
           type: 'graph',
           layout: 'force',
-          // coordinateSystem:"cartesian2d",
           force: {
             repulsion: force.repulsion,
             edgeLength: force.edgeLength,
@@ -386,19 +358,19 @@ function kgOption1 (entity, data) {
   return option
 }
 
-// 获取项目url根地址
-function getRootPathWeb () {
-  // 获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
-  var curWwwPath = window.document.location.href
-  // 获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
-  var pathName = window.document.location.pathname
-  var pos = curWwwPath.indexOf(pathName)
-  // 获取主机地址，如： http://localhost:8083
-  var localhostPaht = curWwwPath.substring(0, pos)
-  // 获取带"/"的项目名，如：/uimcardprj
-  var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1)
-  return (localhostPaht + projectName)
-}
+// // 获取项目url根地址
+// function getRootPathWeb () {
+//   // 获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp
+//   var curWwwPath = window.document.location.href
+//   // 获取主机地址之后的目录，如： uimcardprj/share/meun.jsp
+//   var pathName = window.document.location.pathname
+//   var pos = curWwwPath.indexOf(pathName)
+//   // 获取主机地址，如： http://localhost:8083
+//   var localhostPaht = curWwwPath.substring(0, pos)
+//   // 获取带"/"的项目名，如：/uimcardprj
+//   var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1)
+//   return (localhostPaht + projectName)
+// }
 
 function selfHeight (size) {
   var height = Math.max((100 + Math.sqrt(size) * 88), 350)
@@ -538,7 +510,7 @@ function kgOption2 (entity, data) {
 // 画kg图
 function drawKg (entity, data, mc, optionMethon, graphDom) {
   var option = optionMethon(entity, data)
-  originOption = option
+  // originOption = option
   graphDom.style.height = selfHeight(option.series[0].data.length)
   myChart = mc
   myChart.setOption(option)
@@ -591,23 +563,23 @@ function hideShowNode (e) {
   myChart.setOption(graph)
 }
 
-// 隐藏或者显示所有节点
-function hideShowAllNode (showAll) {
-  predicateShow = []
-  if (showAll) {
-    var graph = cloneObj(originOption)
-    var data = graph.series[0].data
-    var links = graph.series[0].links
-    for (var i = 0; i < data.length; ++i) {
-      if (data[i].category === 1) {
-        hideShowForNode(data, data[i].id, 0, 0, links)
-      }
-    }
-  } else {
-    graph = originOption
-  }
-  myChart.setOption(graph)
-}
+// // 隐藏或者显示所有节点
+// function hideShowAllNode (showAll) {
+//   predicateShow = []
+//   if (showAll) {
+//     var graph = cloneObj(originOption)
+//     var data = graph.series[0].data
+//     var links = graph.series[0].links
+//     for (var i = 0; i < data.length; ++i) {
+//       if (data[i].category === 1) {
+//         hideShowForNode(data, data[i].id, 0, 0, links)
+//       }
+//     }
+//   } else {
+//     graph = originOption
+//   }
+//   myChart.setOption(graph)
+// }
 
 // 设置某个节点的透明度
 function setOpacity (index, nodes, links, edgeOpacity, nodeOpacity) {

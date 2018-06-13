@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     clearSessionStorage () {
-      // sessionStorage.setItem('entityList', "{'bdbaike': {}, 'hdbaike': {}, 'zhwiki': {}}")
+      sessionStorage.setItem('entityList', "{'data': {'bdbaike': [], 'hdbaike': [], 'zhwiki': []}}")
     }
   }
 }

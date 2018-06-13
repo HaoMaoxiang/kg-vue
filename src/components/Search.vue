@@ -12,7 +12,7 @@
       </el-col>
     </el-row>
 
-    <el-card v-bind:class="{hidden: isEmpty(data.data.bdbaike) || isEmpty(data.data.bdbaike) || isEmpty(data.data.bdbaike)}">
+    <el-card v-bind:class="{hidden: isEmpty(data.data.bdbaike) || isEmpty(data.data.bdbaike) || isEmpty(data.data.bdbaike)}" style="margin-top: 50px;">
       <div class="el-card is-always-shadow" v-bind:class="{hidden: isEmpty(data.data.bdbaike)}">
         <div class="el-card__header bg-success">
           <div class="clearfix">
@@ -52,7 +52,6 @@
         </div>
       </div>
     </el-card>
-
   </div>
 </template>
 
@@ -76,7 +75,7 @@ export default {
         if (this.isEmpty(this.data.data.bdbaike) && this.isEmpty(this.data.data.hdbaike) && this.isEmpty(this.data.data.zhwiki)) {
           this.message('提示', '你要查询的' + entity + '不存在')
         }
-        sessionStorage.setItem('entityList', JSON.stringify(resp.data))
+        // sessionStorage.setItem('entityList', JSON.stringify(resp.data))
       }).catch(function (resp) {
         console.log('请求失败' + resp.status + ',' + resp.statusText)
       })
@@ -95,7 +94,7 @@ export default {
     }
   },
   mounted: function () {
-    this.data = JSON.parse(sessionStorage.getItem('entityList'))
+    // this.data = JSON.parse(sessionStorage.getItem('entityList'))
   }
 }
 </script>

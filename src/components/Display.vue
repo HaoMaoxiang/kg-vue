@@ -12,8 +12,8 @@
     </el-row>
 
     <el-card>
-      <div id="graph" class="panel-body" style="width:100%; height: 350px;">
-      </div>
+      <!-- <Graph v-bind:info="infobox"></Graph> -->
+      <Graph1 v-bind:info="infobox" v-bind:entity="viewEntity"></Graph1>
     </el-card>
 
     <el-card v-show="!isEmpty(desc)">
@@ -90,9 +90,14 @@
 
 <script>
 
-import {drawKg, kgOption1} from '../../static/js/youe_echarts.js'
+// import {drawKg, kgOption1} from '../../static/js/youe_echarts.js'
+
+import Graph1 from '../components/Graph1.vue'
 
 export default {
+  components: {
+    Graph1
+  },
   data () {
     return {
       entity: '',
@@ -121,7 +126,7 @@ export default {
     })
   },
   mounted () {
-    this.display(this.infobox)
+    // this.display(this.infobox)
   },
   methods: {
     getInfobox (data) {
@@ -159,18 +164,15 @@ export default {
         return true
       }
       return false
-    },
-    sleep (d) {
-      for (var t = Date.now(); Date.now() - t <= d;);
-    },
-    display (infobox) {
-      var myChart = this.$echarts.init(document.getElementById('graph'))
-      this.sleep(500)
-      drawKg(this.viewEntity, infobox, myChart, kgOption1, document.getElementById('graph'))
-      window.onresize = function () {
-        myChart.resize()
-      }
     }
+    // display (infobox) {
+    //   var myChart = this.$echarts.init(document.getElementById('graph'))
+    //   this.sleep(500)
+    //   drawKg(this.viewEntity, infobox, myChart, kgOption1, document.getElementById('graph'))
+    //   window.onresize = function () {
+    //     myChart.resize()
+    //   }
+    // }
   }
 }
 </script>
